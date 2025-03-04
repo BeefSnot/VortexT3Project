@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #111; /* Overall page background color */
+  background-color: #111;
   color: #fff;
   line-height: 1.6;
 }
@@ -21,25 +21,44 @@ header {
   background: #222;
 }
 
-/* Logo: replaced text with vortex3.gif */
 .logo {
   display: flex;
   align-items: center;
 }
 
 .vortex-logo {
-  /* Adjust width/height to match your Figma design specs */
   width: 100px;
   height: auto;
   object-fit: contain;
 }
 
-nav ul {
+/* NAVIGATION */
+nav ul.main-nav {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
+nav ul.main-nav li {
+  position: relative;
+}
+
+/* Search Bar in the Nav */
+.search-bar {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+/* Active Link Style */
+.active-link {
+  text-decoration: underline;
+}
+
+/* Navigation links */
 nav ul li a {
   text-decoration: none;
   color: #fff;
@@ -51,11 +70,10 @@ nav ul li a:hover {
   color: #ff6666;
 }
 
-/* HERO SECTION */
+/* HERO SECTION (HOME PAGE) */
 .hero {
   position: relative;
   min-height: 50vh;
-  /* Use the "computer" image as the hero background */
   background: url("images/computgerconsultin.jpeg") no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -92,7 +110,7 @@ nav ul li a:hover {
   background: #ff3333;
 }
 
-/* FEATURES SECTION */
+/* FEATURES SECTION (HOME PAGE) */
 .features {
   padding: 2rem;
   background: #1a1a1a;
@@ -129,27 +147,79 @@ nav ul li a:hover {
   margin-bottom: 0.5rem;
 }
 
-/* ABOUT SECTION */
-.about {
+/* ABOUT PAGE */
+.about-page-content {
   padding: 2rem;
+  text-align: center;
   background: #111;
 }
 
-.about h2 {
-  text-align: center;
-  margin-bottom: 1rem;
+.about-page-content h1 {
   font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
-.about p {
-  max-width: 800px;
-  margin: 0 auto;
+.about-info p,
+.about-description p {
+  margin-bottom: 0.5rem;
+}
+
+.about-description {
+  margin-top: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ABOUT FOOTER */
+.about-footer {
+  background: #222;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-social {
   text-align: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 0.5rem;
+  background: #444;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-services,
+.footer-resources {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-services h3,
+.footer-resources h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.footer-services ul,
+.footer-resources ul {
+  list-style: none;
   line-height: 1.8;
 }
 
-/* FOOTER */
-footer {
+/* MAIN FOOTER (HOME PAGE) */
+footer:not(.about-footer) {
   background: #222;
   text-align: center;
   padding: 1rem;
@@ -161,10 +231,9 @@ footer {
   header {
     flex-direction: column;
     text-align: center;
-    padding: 1rem;
   }
 
-  nav ul {
+  nav ul.main-nav {
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 0.5rem;
@@ -186,7 +255,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .about p {
-    padding: 0 1rem;
+  .about-footer {
+    align-items: center;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
   }
 }
